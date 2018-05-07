@@ -1,0 +1,28 @@
+{
+  "lan": [
+    {
+      "id": 1,
+      "lanetakere": ["Per S. Onsen"],
+      "lanebelop": 150000,
+      "notat": "Dette er litt tekst om lånet med id 1"
+    },
+    {
+      "id": 2,
+      "lanetakere": ["Kari Nordmann", "Ola Nordmann"],
+      "lanebelop": 2450000,
+      "notat": "Dette er litt tekst om lånet med id 2"
+    },
+    {
+      "id": 3,
+      "lanetakere": ["Anon Nymen"],
+      "lanebelop": 1700000,
+      "notat": "Dette er litt tekst om lånet med id 3"
+    },
+    {
+      "id": 4,
+      "lanetakere": ["Eoitk Phjrsa", "Oyure Kjes Phjrsa", "Werte Phjrsa"],
+      "lanebelop": 2450000,
+      "notat": "Dette er litt tekst om lånet med id 4"
+    }
+  ]
+}

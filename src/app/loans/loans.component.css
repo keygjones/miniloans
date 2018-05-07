@@ -1,0 +1,31 @@
+.mat-footer-cell {
+    font-weight: bold;
+}
+
+.cdk-column-id, .cdk-column-buttons {
+    max-width: 30px;
+}
+
+.cdk-column-lanetaker{
+    padding-right: 10px;
+}
+
+.loan-overview{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mat-table{
+    padding-top: 93px;
+}
+
+.table-title{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    padding-top:14px;
+    float: left;
+}
+
+.logo{
+    padding:20px 5px 20px 20px;
+    float:left;
+}

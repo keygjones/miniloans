@@ -1,0 +1,33 @@
+<div *ngIf="loan">
+
+
+        <mat-card class="edit-card">
+
+                        <mat-card-title>{{loan.lanetakere}}</mat-card-title>
+                        <mat-card-subtitle>Lånebeløp:   {{loan.lanebelop | currency : "kr "}}</mat-card-subtitle>
+                
+                <mat-card-content>
+                        <mat-form-field class="width100Percent">
+                                <input required matInput placeholder="Lånetakere" [(ngModel)]="loan.lanetakere">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                                <input required matInput placeholder="Beløp" type="number" [(ngModel)]="loan.lanebelop" class="input-right-align">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field class="width100Percent">
+                                <textarea matInput placeholder="Notat" [(ngModel)]="loan.notat"></textarea>
+                        </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions>
+
+                                <button mat-raised-button (click)="save(loan)">
+                                        <i class="fas fa-save fa-lg"></i>Lagre</button>
+
+                        <a routerLink="/detail/{{loan.id}}">
+                                <button mat-raised-button>
+                                        <i class="fas fa-times fa-lg"></i>Kanseller</button>
+                        </a>
+                </mat-card-actions>
+        </mat-card>
+</div>

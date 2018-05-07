@@ -1,0 +1,17 @@
+.edit-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-right-align {
+    text-align: right;
+  }
+
+.width100Percent{      
+      width: 100%;
+}
+
+.fa-times{
+    color:tomato;
+}
+
