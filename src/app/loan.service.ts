@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Loan } from './loans/model/loan';
 import {HttpClient} from '@angular/common/http';
-import 'rxjs/Rx'; 
+import 'rxjs'; 
 import { Observable} from 'rxjs'
 
 @Injectable({
