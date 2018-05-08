@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Loan } from '../loans/model/loan';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoanService } from '../loan.service';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-loan-detail',
@@ -14,6 +15,8 @@ export class LoanDetailComponent implements OnInit {
   @Input() loan: Loan;
 
   constructor(private route: ActivatedRoute,
+    private router: Router,
+    private notifierService: NotifierService,
     private loanService: LoanService) {}
 
   ngOnInit() {
@@ -26,6 +29,10 @@ export class LoanDetailComponent implements OnInit {
     .subscribe(
       (loans) =>{
        this.loan = loans['lan'].find(loan => loan.id == id);
+       if(!this.loan){
+        this.router.navigate(['/loans']);
+        this.notifierService.notify( 'error', 'Finner ikke lån med ID:' + id );
+       }
       });
   }
 
