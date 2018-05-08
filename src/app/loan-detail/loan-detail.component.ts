@@ -27,9 +27,9 @@ export class LoanDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.loanService.getLoans()
     .subscribe(
-      (loans) =>{
-       this.loan = loans['lan'].find(loan => loan.id == id);
-       if(!this.loan){
+      (loans) => {
+       this.loan = loans['lan'].find(loan => loan.id === id);
+       if (!this.loan) {
         this.router.navigate(['/loans']);
         this.notifierService.notify( 'error', 'Finner ikke lån med ID:' + id );
        }

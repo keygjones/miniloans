@@ -17,7 +17,7 @@ export class LoanEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private loanService: LoanService, 
+    private loanService: LoanService,
     private router: Router,
     private notifierService: NotifierService) {}
 
@@ -29,12 +29,12 @@ export class LoanEditComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.loanService.getLoans()
     .subscribe(
-      (loans) =>{
-       this.loan = loans['lan'].find(loan => loan.id == id);
+      (loans) => {
+       this.loan = loans['lan'].find(loan => loan.id === id);
       });
   }
 
-  save(loan) { 
+  save(loan) {
     console.log('Save invoked ');
     console.log(loan);
     this.router.navigate(['/loans']);

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Loan } from './loans/model/loan';
 import {HttpClient} from '@angular/common/http';
-import 'rxjs'; 
-import { Observable} from 'rxjs'
+import 'rxjs';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,12 @@ export class LoanService {
 
   private loans: Loan[];
 
-  private loansUrl = 'assets/lan.json'
+  private loansUrl = 'assets/lan.json';
 
   constructor(private http: HttpClient) { }
 
   getLoans(): Observable<any> {
-    return this.http.get(this.loansUrl);  
+    return this.http.get(this.loansUrl);
   }
 
 }

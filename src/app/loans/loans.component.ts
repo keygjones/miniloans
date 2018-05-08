@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoanService } from '../loan.service';
 import { Loan } from './model/loan';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -17,27 +17,26 @@ export class LoansComponent implements OnInit {
   displayedColumns = ['id', 'lanetaker', 'lan', 'buttons'];
   total: number;
 
-  constructor(private loanService : LoanService) { }
+  constructor(private loanService: LoanService) { }
 
-  getLoans(){
+  getLoans() {
     console.log('Getting loans, calling service');
     this.loanService.getLoans()
     .subscribe(
-      (loans) =>{
-       this.loans = loans['lan']
+      (loans) => {
+       this.loans = loans['lan'];
       }
       ,
-      () =>{
+      () => {
         console.log('Error');
       },
-      () =>{
+      () => {
         this.total = this.loans.
           map(t => t.lanebelop).reduce((acc, value) => acc + value, 0);
-        
         });
   }
 
-  getTotal(){
+  getTotal() {
     return this.total;
   }
 
