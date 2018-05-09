@@ -1,18 +1,20 @@
 <div *ngIf="loan">
         <mat-card class="example-card">
 
-                        <mat-card-title>{{loan.lanetakere}}</mat-card-title>
-                        <mat-card-subtitle>Lånebeløp:   {{loan.lanebelop | currency : "kr "}}</mat-card-subtitle>
+                <mat-card-title>{{loan.lanetakere}}</mat-card-title>
+                <mat-card-subtitle>Lånebeløp: {{loan.lanebelop | currency : "kr "}}</mat-card-subtitle>
 
                 <mat-card-content>
                         <p>{{loan.notat}}</p>
                 </mat-card-content>
                 <mat-card-actions>
                         <a routerLink="/loans">
-                                <button mat-raised-button><i class="fas fa-home fa-lg"></i>Lån oversikt</button>
+                                <button mat-raised-button>
+                                        <i class="fas fa-home fa-lg"></i>Lån oversikt</button>
                         </a>
                         <a routerLink="/edit/{{loan.id}}">
-                                <button mat-raised-button><i class="fas fa-edit fa-lg"></i>Rediger</button>
+                                <button mat-raised-button>
+                                        <i class="fas fa-edit fa-lg"></i>Rediger</button>
                         </a>
                 </mat-card-actions>
         </mat-card>

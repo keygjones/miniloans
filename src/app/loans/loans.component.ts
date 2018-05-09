@@ -20,7 +20,6 @@ export class LoansComponent implements OnInit {
   constructor(private loanService: LoanService) { }
 
   getLoans() {
-    console.log('Getting loans, calling service');
     this.loanService.getLoans()
     .subscribe(
       (loans) => {

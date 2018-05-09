@@ -1,12 +1,10 @@
-
-
 <div class="loan-overview mat-elevation-z4">
-<div>
-    <img class="logo" src="../assets/logo.png"> 
+  <div>
+    <img class="logo" src="../assets/logo.png">
     <p class="table-title">Lån oversikt</p>
-</div>
-       
-  
+  </div>
+
+
   <mat-table [dataSource]="loans">
 
     <!-- Id Column -->
@@ -23,19 +21,23 @@
       <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
     </ng-container>
 
-     <!-- Loan Column -->
-     <ng-container matColumnDef="lan">
+    <!-- Loan Column -->
+    <ng-container matColumnDef="lan">
       <mat-header-cell *matHeaderCellDef> Lånebeløp </mat-header-cell>
       <mat-cell *matCellDef="let loan"> {{loan.lanebelop | currency : "kr "}} </mat-cell>
-      <mat-footer-cell *matFooterCellDef> {{getTotal() | currency : "kr "}}  </mat-footer-cell>
+      <mat-footer-cell *matFooterCellDef> {{getTotal() | currency : "kr "}} </mat-footer-cell>
     </ng-container>
 
     <!-- Button Column -->
     <ng-container matColumnDef="buttons">
-        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-        <mat-cell *matCellDef="let loan"> <a routerLink="/detail/{{loan.id}}">	<i class="fas fa-search fa-lg"></i> </a> </mat-cell>
-        <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
-      </ng-container>
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let loan">
+        <a routerLink="/detail/{{loan.id}}">
+          <i class="fas fa-search fa-lg"></i>
+        </a>
+      </mat-cell>
+      <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+    </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

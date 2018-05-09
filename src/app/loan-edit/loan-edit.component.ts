@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { LoanService } from '../loan.service';
 import { NotifierService } from 'angular-notifier';
+import { MessagesService} from '../messages-service.service';
 
 @Component({
   selector: 'app-loan-edit',
@@ -19,7 +20,8 @@ export class LoanEditComponent implements OnInit {
     private route: ActivatedRoute,
     private loanService: LoanService,
     private router: Router,
-    private notifierService: NotifierService) {}
+    private notifierService: NotifierService,
+    private messagesService: MessagesService) {}
 
   ngOnInit() {
     this.getLoan();
@@ -31,6 +33,9 @@ export class LoanEditComponent implements OnInit {
     .subscribe(
       (loans) => {
        this.loan = loans['lan'].find(loan => loan.id === id);
+       if (!this.loan) {
+        this.messagesService.ifNoLoanFoundMessage(id);
+       }
       });
   }
 

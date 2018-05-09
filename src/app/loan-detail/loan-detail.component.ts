@@ -3,6 +3,7 @@ import { Loan } from '../loans/model/loan';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoanService } from '../loan.service';
 import { NotifierService } from 'angular-notifier';
+import { MessagesService} from '../messages-service.service';
 
 @Component({
   selector: 'app-loan-detail',
@@ -17,7 +18,8 @@ export class LoanDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private notifierService: NotifierService,
-    private loanService: LoanService) {}
+    private loanService: LoanService,
+    private messagesService: MessagesService) {}
 
   ngOnInit() {
     this.getLoan();
@@ -30,8 +32,7 @@ export class LoanDetailComponent implements OnInit {
       (loans) => {
        this.loan = loans['lan'].find(loan => loan.id === id);
        if (!this.loan) {
-        this.router.navigate(['/loans']);
-        this.notifierService.notify( 'error', 'Finner ikke lån med ID:' + id );
+        this.messagesService.ifNoLoanFoundMessage(id);
        }
       });
   }

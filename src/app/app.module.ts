@@ -10,8 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoanDetailComponent } from './loan-detail/loan-detail.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
-import { LoanEditComponent } from './loan-edit/loan-edit.component'; 
+import { LoanEditComponent } from './loan-edit/loan-edit.component';
 import { NotifierModule } from 'angular-notifier';
+import { MessagesService } from './messages-service.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { NotifierModule } from 'angular-notifier';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule,MatCardModule,MatButtonModule,MatInputModule,
+    MatTableModule, MatCardModule, MatButtonModule, MatInputModule,
     MatFormFieldModule,
     FormsModule,
     AppRoutingModule,
@@ -42,7 +44,7 @@ import { NotifierModule } from 'angular-notifier';
       }
     } )
   ],
-  providers: [],
+  providers: [MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
